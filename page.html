@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameSphere | Gaming News & Reviews</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background-color: #0c0f1a;
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #12162a;
+            text-align: center;
+            padding: 30px;
+            border-bottom: 3px solid #00ffe5;
+        }
+
+        #logo {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 0 auto 10px auto;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            color: #00ffe5;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #cccccc;
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            background-color: #191e34;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #00ffe5;
+        }
+
+        /* HERO / HOME */
+        #banner {
+            background-image: url("banner.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            border-top: 3px solid #00ffe5;
+            border-bottom: 3px solid #00ffe5;
+        }
+
+        #banner h2 {
+            color: #00ffe5;
+            font-size: 2em;
+        }
+
+        #banner p {
+            color: #f5f5f5;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* SECTION TITLES */
+        section h2 {
+            color: #00ffe5;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* NEWS SECTION */
+        #news {
+            text-align: center;
+        }
+
+        .news-card {
+            display: inline-block;
+            vertical-align: top;
+            width: 300px;
+            background-color: #1a1f36;
+            margin: 15px;
+            border: 2px solid #00ffe5;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .news-card img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .news-card h3 {
+            color: #ffffff;
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        .news-card p {
+            padding: 0 10px 10px 10px;
+            font-size: 0.95em;
+            color: #cccccc;
+        }
+
+        /* TABLES */
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            color: #f5f5f5;
+        }
+
+        th, td {
+            border: 2px solid #00ffe5;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #12162a;
+            color: #00ffe5;
+        }
+
+        tr:nth-child(even) {
+            background-color: #1a1f36;
+        }
+
+        tr:hover {
+            background-color: #ff007f;
+            color: white;
+        }
+
+        /* REVIEWS */
+        #reviews {
+            text-align: center;
+        }
+
+        .criteria {
+            display: inline-block;
+            width: 40%;
+            background-color: #1a1f36;
+            margin: 15px;
+            padding: 15px;
+            border: 2px solid #00ffe5;
+            border-radius: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .criteria h3 {
+            color: #00ffe5;
+            text-align: center;
+        }
+
+        .criteria ul {
+            list-style-type: square;
+            padding-left: 30px;
+            color: #cccccc;
+        }
+
+        /* ABOUT */
+        #about p {
+            color: #cccccc;
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* CONTACT */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #1a1f36;
+            border: 2px solid #00ffe5;
+            border-radius: 10px;
+            padding: 25px;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            color: #00ffe5;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            background-color: #0c0f1a;
+            border: 1px solid #00ffe5;
+            color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #00ffe5;
+            color: #12162a;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ff007f;
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #12162a;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            color: #bbbbbb;
+            border-top: 2px solid #00ffe5;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <img src="logo.jpg" alt="GameSphere Logo" id="logo">
+        <h1>🎮 GameSphere</h1>
+        <p>Your daily dose of gaming news and reviews</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+        <div id="banner">
+            <h2>Top Gaming Stories</h2>
+            <p>Stay updated with the latest from the gaming universe — from next-gen releases to esports highlights!</p>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section id="news">
+        <h2>Latest News</h2>
+        <article class="news-card">
+            <img src="game1.jpg" alt="Cyberpunk 2077">
+            <h3>Cyberpunk 2077 2.0 Update Revives the Game</h3>
+            <p>Massive overhaul impresses fans with better AI, story depth, and performance.</p>
+        </article>
+        <article class="news-card">
+            <img src="game2.jpg" alt="Elden Ring DLC">
+            <h3>Elden Ring DLC: Shadow of the Erdtree Announced</h3>
+            <p>New realms, bosses, and deeper lore await in FromSoftware’s latest reveal.</p>
+        </article>
+        <article class="news-card">
+            <img src="game3.jpg" alt="GTA 6">
+            <h3>GTA 6 Trailer Breaks the Internet</h3>
+            <p>Rockstar finally unveils Vice City’s return — fans can’t wait for 2025.</p>
+        </article>
+
+        <h2>Top Trending Games</h2>
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Game</th>
+                <th>Genre</th>
+                <th>Platform</th>
+            </tr>
+            <tr><td>1</td><td>Cyberpunk 2077</td><td>Action RPG</td><td>PC, PS5, Xbox</td></tr>
+            <tr><td>2</td><td>Elden Ring</td><td>Fantasy RPG</td><td>PC, PS5, Xbox</td></tr>
+            <tr><td>3</td><td>GTA 6 (Upcoming)</td><td>Open World</td><td>PS5, Xbox</td></tr>
+            <tr><td>4</td><td>Valorant</td><td>FPS</td><td>PC</td></tr>
+            <tr><td>5</td><td>Fortnite</td><td>Battle Royale</td><td>All Platforms</td></tr>
+        </table>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="reviews">
+        <h2>Top Game Reviews</h2>
+        <table>
+            <tr><th>Game</th><th>Genre</th><th>Rating</th><th>Verdict</th></tr>
+            <tr><td>Cyberpunk 2077 (2.0)</td><td>Action RPG</td><td>⭐⭐⭐⭐☆</td><td>A huge comeback!</td></tr>
+            <tr><td>Elden Ring</td><td>Fantasy RPG</td><td>⭐⭐⭐⭐⭐</td><td>Legendary masterpiece.</td></tr>
+            <tr><td>Valorant</td><td>FPS</td><td>⭐⭐⭐☆☆</td><td>Fun, fast-paced, needs maps.</td></tr>
+        </table>
+
+        <div class="criteria">
+            <h3>✅ Pros</h3>
+            <ul>
+                <li>Engaging storylines</li>
+                <li>Balanced gameplay</li>
+                <li>High-quality visuals</li>
+                <li>Regular updates</li>
+            </ul>
+        </div>
+        <div class="criteria">
+            <h3>❌ Cons</h3>
+            <ul>
+                <li>Repetitive missions</li>
+                <li>Microtransactions</li>
+                <li>Bugs or performance drops</li>
+                <li>Lack of innovation</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About GameSphere</h2>
+        <p><b>GameSphere</b> is your one-stop destination for gaming news and reviews.  
+        We bring you updates, reviews, and opinions from real gamers across the world.  
+        Whether you’re into RPGs, shooters, or open-world adventures, GameSphere connects you with everything gaming!</p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you. Share your feedback or ideas below:</p>
+        <form>
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea><br><br>
+
+            <button type="submit">Send</button>
+            <button type="reset">Clear</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 GameSphere | Created by Nandhesh H</p>
+    </footer>
+
+</body>
+</html>
